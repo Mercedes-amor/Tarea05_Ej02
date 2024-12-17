@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tema 5, ejercicio 1</title>
+    </head>
+    <body>
+        <form action="#" method="post"
+            th:action="@{/myForm/submit}"
+            th:object="${formInfo}">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+             <!-- Usamos name en vez de th:field="*{nombre}" 
+              ya que nos da error por el atributo value?-->
+            <label>Edad:</label>
+            <input type="text" name="edad" id="edad">
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>
