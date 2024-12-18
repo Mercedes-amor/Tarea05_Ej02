@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tema 5, ejercicio 2</title>
+    </head>
+    <body>
+        <form action="#" method="post"
+            th:action="@{/myForm/submit}"
+            th:object="${formInfo}">
+
+            <!-- Fechas -->
+            <p>Introduzca 2 fechas</p>
+            <label>Fecha 1:</label>
+            <input type="date" name="fecha1" id="fecha1" th:field="*{fecha1}">
+            <span th:if="${#fields.hasErrors('fecha1')}" th:errors="*{fecha1}" style="color: red;"></span>
+            <br>
+        
+            <label>Fecha 2:</label>
+            <input type="date" name="fecha2" id="fecha2" th:field="*{fecha2}">
+            <span th:if="${#fields.hasErrors('fecha2')}" th:errors="*{fecha2}" style="color: red;"></span>
+
+            <br><br>
+
+            <!-- Opciones -->
+            <h3>Seleccione cálculo a realizar:</h3>
+            <input type="radio" id="dias" name="operacion" value="dias" th:field="*{operacion}">
+            <label for="dias">Días entre fechas</label>
+            <br>
+            <input type="radio" id="bisiestos" name="operacion" value="bisiestos" th:field="*{operacion}">
+            <label for="bisiestos">Años bisiestos</label>
+            <br>
+            <input type="radio" id="domingos" name="operacion" value="domingos" th:field="*{operacion}">
+            <label for="domingos">Años con 1 de enero en domingo</label>
+            <br>
+            <span th:if="${#fields.hasErrors('operacion')}" th:errors="*{operacion}" style="color: red;"></span>
+            <br><br>
+
+            <!-- Botón enviar -->
+            <button type="submit">Calcular</button>
+        </form>
+    </body>
+</html>

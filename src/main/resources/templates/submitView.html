@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tema 5, ejercicio 2</title>
+    </head>
+    <body>
+        <h1>Resultado</h1>
+        <span>Entre las fechas</span>
+        <b><span th:text="${formInfo.fecha1}"></span></b> y 
+        <b><span th:text="${formInfo.fecha2}"></span></b>
+
+        <p th:if ="${resultadoDias} != null"> Hay 
+            <b><span th:text="${resultadoDias}"></span> días.</b>
+        </p>
+
+        <p th:if ="${resultadoBisiestos} != null"> Hay 
+            <b><span th:text="${resultadoBisiestos}"></span> años bisiestos.</b>
+        </p>
+
+        <p th:if ="${resultadoDomingos} != null"> Hay 
+            <b><span th:text="${resultadoDomingos}"></span> años en los que el 1 Enero cae en Domingo.</b>
+        </p>
+
+    </body>
+</html>
